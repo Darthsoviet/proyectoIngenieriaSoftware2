@@ -6,6 +6,7 @@ import { useContextReducer } from "../providers/Session.provider"
 import { actions } from "../reducers/SessionReducer/sessionActions";
 import ProductosForm from "../components/ProductosForm";
 import "./layout.scss"
+import { MainBox } from './Layout.styles';
 
 
 export default function Layout({ children }) {
@@ -32,10 +33,11 @@ export default function Layout({ children }) {
                <ProductosForm></ProductosForm>
 
             </Menu>
-            <div>
-
+            <MainBox>
                {children}
-            </div>
+
+            </MainBox>
+
 
          </div>
 

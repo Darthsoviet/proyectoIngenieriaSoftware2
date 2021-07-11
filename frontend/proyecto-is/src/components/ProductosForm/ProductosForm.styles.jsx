@@ -33,7 +33,7 @@ input,textarea{
 button{
 
    outline: none ;
-   background: ${({theme})=>theme.secondaryBackground};
+   background: ${({theme})=>theme.secondary};
 
    margin: 1rem;
    padding: 2%;

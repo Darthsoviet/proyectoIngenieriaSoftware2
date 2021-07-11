@@ -6,7 +6,7 @@ const theme={
    secondaryDarkBackground:"#191919",
 
    primary:"hsl(215, 50%, 23%)",
-   secondary:"hsl(198, 63%, 38%)",
+   secondary:"hsl(68, 100%, 37%)",
    primaryColor:"hsl(195, 100%, 6%)",
    secondaryColor:"black",
    ligthColor:"white"
