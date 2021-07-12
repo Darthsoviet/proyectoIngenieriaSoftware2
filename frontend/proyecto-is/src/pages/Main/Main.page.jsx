@@ -3,7 +3,6 @@ import Paginador from '../../components/Paginador'
 import ProductoCard from '../../components/ProductoCard';
 import config from '../../config/config';
 import { ProductGrid } from './Main.styles';
-import { SolarSystemLoading as Loader } from "react-loadingg";
 import { useContextReducer } from '../../providers/Session.provider';
 import { actions } from '../../reducers/SessionReducer';
 
@@ -85,7 +84,7 @@ export default function Main() {
                   i => (
                      <ProductoCard key={i.id} producto={i} />
                   )) : null}
-               {state.loading ? (<Loader></Loader>) : null}
+               {state.loading ? (<img src="https://cdna.artstation.com/p/assets/images/images/016/928/248/original/cloe-ferrara-loader2-0.gif?1554021987" alt="loading..."/>) : null}
 
             </ProductGrid>
 
