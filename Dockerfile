@@ -9,15 +9,13 @@ RUN npm install react-scripts -g --silent
 
 
 RUN npm install --silent
-ARG REACT_APP_BACKEND_URL
 COPY ./frontend/proyecto-is ./
 
 RUN npm rebuild node-sass
-ENV REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL}}
 RUN npm run build
 
 
-FROM maven as build
+FROM mave as build
 WORKDIR /app
 COPY ./backend/proyecto ./
 COPY --from=react /app/build ./src/main/resources/static

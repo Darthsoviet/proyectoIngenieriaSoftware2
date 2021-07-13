@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react'
-import config from '../../config/config';
 import { useContextReducer } from '../../providers/Session.provider';
 import { actions } from '../../reducers/SessionReducer';
 
@@ -20,9 +19,9 @@ export default function ProductosForm() {
 
 
 
-      await fetch(`${config.BACKEND_URL}/productos`,{method:"POST", body: JSON.stringify(producto),headers:{"Content-Type":"application/json"}})
+      await fetch(`productos`,{method:"POST", body: JSON.stringify(producto),headers:{"Content-Type":"application/json"}})
       dispatch({type:actions.SET_LOADING,payload:true})
-      const response=await (await fetch(`${config.BACKEND_URL}/productos?size=6&page=${state.dataProductosPage}`)).json();
+      const response=await (await fetch(`productos?size=6&page=${state.dataProductosPage}`)).json();
       dispatch({type:actions.SET_DATA_PRODUCTOS,payload:response})
       dispatch({type:actions.SET_LOADING,payload:false})
 

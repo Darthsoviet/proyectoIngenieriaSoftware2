@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import Paginador from '../../components/Paginador'
 import ProductoCard from '../../components/ProductoCard';
-import config from '../../config/config';
 import { ProductGrid } from './Main.styles';
 import { useContextReducer } from '../../providers/Session.provider';
 import { actions } from '../../reducers/SessionReducer';
@@ -13,7 +12,7 @@ export default function Main() {
 
 
    const { state, dispatch } = useContextReducer();
-   const url = `${config.BACKEND_URL}/productos?size=6&page=${state.dataProductosPage}`
+   const url = `productos?size=6&page=${state.dataProductosPage}`
 
 
    useEffect(() => {

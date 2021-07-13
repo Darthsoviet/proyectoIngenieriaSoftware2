@@ -1,5 +1,4 @@
 import React from 'react'
-import config from '../../config/config';
 import { useContextReducer } from '../../providers/Session.provider';
 import { actions } from '../../reducers/SessionReducer';
 import { CardBody } from './ProductoCard.styles'
@@ -11,8 +10,8 @@ export default function ProductoCard({ producto }) {
    async function handleOnclick(id){
       dispatch({type:actions.SET_LOADING,payload:true})
 
-      await fetch(`${config.BACKEND_URL}/productos/${id}`,{method:"DELETE"});
-      const response=await (await fetch(`${config.BACKEND_URL}/productos?size=6&page=${state.dataProductosPage}`)).json();
+      await fetch(`productos/${id}`,{method:"DELETE"});
+      const response=await (await fetch(`productos?size=6&page=${state.dataProductosPage}`)).json();
       dispatch({type:actions.SET_DATA_PRODUCTOS,payload:response})
       dispatch({type:actions.SET_LOADING,payload:false});
 
